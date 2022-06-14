@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/image.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/kakao_login_bg.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/login_animation_list.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/vectordrawable.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_previewscreen.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_splash.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/preview_viewpager_item.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>

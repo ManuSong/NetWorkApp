@@ -2,11 +2,15 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@drawable/manggo_bingsu"
+        android:drawable="@drawable/chanchi"
         android:duration="4000"/>
 
     <item
-        android:drawable="@drawable/gaupchang"
+        android:drawable="@drawable/hansik"
+        android:duration="4000"/>
+
+    <item
+        android:drawable="@drawable/sushi"
         android:duration="4000"/>
 
 </animation-list>
