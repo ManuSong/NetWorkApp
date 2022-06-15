@@ -1,60 +1,82 @@
 package com.risingcamp.manu.networkapp.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.risingcamp.manu.networkapp.R
+import androidx.viewpager2.widget.ViewPager2
+import com.risingcamp.manu.networkapp.*
+import com.risingcamp.manu.networkapp.databinding.FragmentMainBinding
+import com.risingcamp.manu.networkapp.retrofitdata.Data
+import com.risingcamp.manu.networkapp.retrofitdata.delicous_restrant
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var AdImageList = ArrayList<ImageData>()
+    private lateinit var AdViewPagerAdapter : AdViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        val binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        AdImageList.add(ImageData(R.drawable.mango_ad1))
+        AdImageList.add(ImageData(R.drawable.manggo_ad2))
+        AdImageList.add(ImageData(R.drawable.manggo_ad3))
+        AdImageList.add(ImageData(R.drawable.manggo_ad4))
+        AdImageList.add(ImageData(R.drawable.manggo_ad5))
+        AdImageList.add(ImageData(R.drawable.manggo_ad6))
+
+        AdViewPagerAdapter = AdViewPagerAdapter(AdImageList)
+
+        binding.mainFrgViewpager2.apply {
+            adapter = AdViewPagerAdapter
+            orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        }
+
+
+        getRestrauentData()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MainFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MainFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+    private fun getRestrauentData() {
+        val resInterface = RetrofitClient.sRetrofit.create(RestaurantInterface::class.java)
+        resInterface.getRestaurant(1,61,"oT9zyC/LGfZfmiomD0COKOzcKAEp6tXQC3V6dRg2QVd6JiW3QxSq7xzuAQiKSxvO6TrD52RTSKlEHEAcg64hpw==").enqueue(object :
+            Callback<delicous_restrant> {
+            override fun onResponse(
+                call: Call<delicous_restrant>,
+                response: Response<delicous_restrant>
+            ) {
+                if(response.isSuccessful) {
+                    val result = response.body() as delicous_restrant
+                    result.data.forEach {
+                        Log.d("testt", " ${it.사장님이자랑하는내가게한마디}")
+                    }
+
+                } else {
+                    Log.d("testt", "getRestraurant - onResponse : Error code ${response.code()}")
                 }
             }
+
+            override fun onFailure(call: Call<delicous_restrant>, t: Throwable) {
+                Log.d("testt", t.message ?: "통신 오류")
+            }
+        })
+
     }
+
+
 }

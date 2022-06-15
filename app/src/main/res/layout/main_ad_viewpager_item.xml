@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/ad_images"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="155dp"
         android:adjustViewBounds="true"
         android:src="@drawable/mango_ad1"
         android:scaleType="fitXY"

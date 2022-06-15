@@ -3,4 +3,5 @@
     <string name="address_name"><u>용산/숙대</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="score_check"><u>평점순</u></string>
 </resources>

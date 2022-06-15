@@ -1,18 +1,23 @@
 package com.risingcamp.manu.networkapp
 
+import android.annotation.SuppressLint
 import android.app.Fragment
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import com.risingcamp.manu.networkapp.databinding.ActivityMainScreenBinding
 import com.risingcamp.manu.networkapp.fragment.*
+import com.risingcamp.manu.networkapp.retrofitdata.delicous_restrant
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainScreenBinding
-    private var AdImageList = ArrayList<ImageData>()
-    private lateinit var AdViewPagerAdapter : AdViewPagerAdapter
+
     private val fragmentOne by lazy { MainFragment() }
     private val fragmentTwo by lazy { DiscountResFragment() }
     private val fragmentThree by lazy { PlusFragment() }
@@ -26,17 +31,12 @@ class MainScreenActivity : AppCompatActivity() {
 
 
 
-        AdImageList.add(ImageData(R.drawable.mango_ad1))
-        AdImageList.add(ImageData(R.drawable.manggo_ad2))
-        AdImageList.add(ImageData(R.drawable.manggo_ad3))
-        AdImageList.add(ImageData(R.drawable.manggo_ad4))
-        AdImageList.add(ImageData(R.drawable.manggo_ad5))
-        AdImageList.add(ImageData(R.drawable.manggo_ad6))
 
-        AdViewPagerAdapter = AdViewPagerAdapter(AdImageList)
 
         initNavigationBar()
 
+
+//        getRestrauentData()
 
 
     }
@@ -83,4 +83,6 @@ class MainScreenActivity : AppCompatActivity() {
             .commit()
     }
 
-}
+
+    }
+
