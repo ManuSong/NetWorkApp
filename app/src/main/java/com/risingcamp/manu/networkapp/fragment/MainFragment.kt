@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import com.risingcamp.manu.networkapp.*
 import com.risingcamp.manu.networkapp.databinding.FragmentMainBinding
 import com.risingcamp.manu.networkapp.retrofitdata.Data
@@ -37,7 +38,6 @@ class MainFragment : Fragment() {
         AdImageList.add(ImageData(R.drawable.manggo_ad3))
         AdImageList.add(ImageData(R.drawable.manggo_ad4))
         AdImageList.add(ImageData(R.drawable.manggo_ad5))
-        AdImageList.add(ImageData(R.drawable.manggo_ad6))
 
         AdViewPagerAdapter = AdViewPagerAdapter(AdImageList)
 
@@ -45,6 +45,15 @@ class MainFragment : Fragment() {
             adapter = AdViewPagerAdapter
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }
+
+        TabLayoutMediator(
+            binding.tabMainBanner,
+            binding.mainFrgViewpager2
+        ){
+            tab, position ->
+            binding.mainFrgViewpager2.setCurrentItem(tab.position)
+        }.attach()
+
 
 
         getRestrauentData()

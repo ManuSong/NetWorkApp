@@ -6,6 +6,8 @@
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">10sp</dimen>
     <dimen name="design_bottom_navigation_height" tools:override="true">58sp</dimen>
     <dimen name="design_bottom_navigation_margin" tools:override="true">8dp</dimen>
+    <dimen name="dot_size">4dp</dimen>
+    <dimen name="dot_padding">9dp</dimen>
 
 
 </resources>
