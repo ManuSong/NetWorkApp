@@ -6,6 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MainFragment">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,6 +38,7 @@
             app:tabPaddingStart="@dimen/dot_padding"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_mid_container"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@color/white"
@@ -64,9 +69,91 @@
                 android:layout_marginLeft="3dp"/>
 
 
+            <FrameLayout
+                android:id="@+id/main_filter"
+                android:layout_width="59dp"
+                android:layout_height="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/main_filter_bg">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/filter_img"
+                    android:layout_gravity="left|center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="필터"
+                    android:textSize="11dp"
+                    android:fontFamily="@font/spoqahansansneo_regular"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="9dp"/>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/main_reset"
+                android:layout_width="78dp"
+                android:layout_height="35dp"
+                app:layout_constraintEnd_toStartOf="@+id/main_filter"
+                app:layout_constraintTop_toTopOf="@+id/main_filter"
+                app:layout_constraintBottom_toBottomOf="@+id/main_filter"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/main_reset_bg">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/reset_button"
+                    android:layout_gravity="left|center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="9dp"
+                    android:fontFamily="@font/spoqahansansneo_regular"
+                    android:text="내 주변"
+                    android:textColor="@color/manggoplate_color"
+                    android:textSize="12dp" />
+
+
+            </FrameLayout>
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/main_banner_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_banner_img"
+            app:layout_constraintTop_toBottomOf="@+id/main_mid_container"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notice_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/main_banner_img"
+            app:layout_constraintStart_toStartOf="parent"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

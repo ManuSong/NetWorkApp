@@ -4,6 +4,8 @@ import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import com.kakao.sdk.auth.LoginClient
@@ -17,6 +19,7 @@ class PreviewScreenActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityPreviewscreenBinding
     private lateinit var roketAnimation : AnimationDrawable
+    private var handler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +36,17 @@ class PreviewScreenActivity : AppCompatActivity() {
             }
         }
 
+        Thread(){
 
+            tranxAni()
+
+
+            handler.postDelayed({
+                binding.moveTest.scaleY = 1.6f
+                binding.moveTest.setImageResource(R.drawable.login_move_img2)
+                transxReverseAni()
+            }, 3000)
+        }.start()
 
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
@@ -95,5 +108,17 @@ class PreviewScreenActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun tranxAni() {
+        binding.moveTest.animate().translationX(-100f).setDuration(5000).withEndAction {
+            binding.moveTest.translationX = 0f
+        }
+    }
+
+    private fun transxReverseAni() {
+        binding.moveTest.animate().translationX(100f).setDuration(5000).withEndAction {
+            binding.moveTest.translationX = 0f
+        }
     }
 }

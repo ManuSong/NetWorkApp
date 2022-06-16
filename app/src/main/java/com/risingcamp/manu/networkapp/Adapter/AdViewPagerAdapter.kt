@@ -1,9 +1,11 @@
-package com.risingcamp.manu.networkapp
+package com.risingcamp.manu.networkapp.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.risingcamp.manu.networkapp.DataClass.ImageData
+import com.risingcamp.manu.networkapp.R
 
 class AdViewPagerAdapter(var adImageList : ArrayList<ImageData>) : RecyclerView.Adapter<AdViewPagerAdapter.AdPagerAdapter>() {
 
@@ -23,11 +25,11 @@ class AdViewPagerAdapter(var adImageList : ArrayList<ImageData>) : RecyclerView.
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AdViewPagerAdapter.AdPagerAdapter {
+    ): AdPagerAdapter {
         return AdPagerAdapter((parent))
     }
 
-    override fun onBindViewHolder(holder: AdViewPagerAdapter.AdPagerAdapter, position: Int) {
+    override fun onBindViewHolder(holder: AdPagerAdapter, position: Int) {
         holder.onBindWith(adImageList[position])
     }
 

@@ -1,5 +1,6 @@
 package com.risingcamp.manu.networkapp
 
+import com.risingcamp.manu.networkapp.retrofitdata.Data
 import com.risingcamp.manu.networkapp.retrofitdata.delicous_restrant
 import retrofit2.Call
 import retrofit2.http.GET

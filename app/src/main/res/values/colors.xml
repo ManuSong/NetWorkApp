@@ -13,5 +13,8 @@
     <color name="facebook_color">#3B5998</color>
     <color name="main_text_color">#14000000</color>
     <color name="manggoplate_color">#FF7101</color>
+    <color name="reset_color">#5EDCDCDC</color>
+    <color name="dark_grey">#A9A9A9</color>
+
 
 </resources>

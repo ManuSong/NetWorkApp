@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         handler.postDelayed({
             val intent = Intent(this, PreviewScreenActivity::class.java)
             startActivity(intent)
-        },3000)
+        },1500)
 
     }
 
