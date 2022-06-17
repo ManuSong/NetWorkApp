@@ -84,7 +84,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:src="@drawable/login_move_img"
                 android:scaleType="fitXY"
-                android:background="@drawable/main_review_recyclerview_bg1"
+                android:background="@drawable/main_screen_img_bg"
                 android:layout_marginRight="15dp"/>
 
 

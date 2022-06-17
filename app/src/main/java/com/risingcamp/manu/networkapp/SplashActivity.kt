@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
+import android.widget.Toast
 import androidx.core.os.HandlerCompat.postDelayed
+import com.kakao.sdk.user.UserApiClient
 import com.risingcamp.manu.networkapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
@@ -19,8 +21,22 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         handler.postDelayed({
-            val intent = Intent(this, PreviewScreenActivity::class.java)
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+                if (error != null) {
+                    val intent = Intent(this@SplashActivity, PreviewScreenActivity::class.java)
+                    Toast.makeText(this, "토큰 정보 보기 실패", Toast.LENGTH_SHORT).show()
+                    startActivity(intent)
+                }
+                else if (tokenInfo != null) {
+                    Toast.makeText(this, "토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainScreenActivity::class.java)
+                    startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                    finish()
+                }
+            }
             startActivity(intent)
         },1500)
 

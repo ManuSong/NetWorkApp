@@ -34,6 +34,7 @@
             android:name=".PreviewScreenActivity"
             android:exported="false" />
 
+
         <activity
             android:name=".MainScreenActivity"
             android:exported="false" />

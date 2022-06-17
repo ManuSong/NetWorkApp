@@ -2,10 +2,13 @@ package com.risingcamp.manu.networkapp
 
 import android.annotation.SuppressLint
 import android.app.Fragment
+import android.media.Image
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.risingcamp.manu.networkapp.databinding.ActivityMainScreenBinding
 import com.risingcamp.manu.networkapp.fragment.*

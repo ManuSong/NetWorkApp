@@ -15,7 +15,9 @@
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/main_filter_bg.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/main_reset_bg.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/main_review_recyclerview_bg1.xml" value="0.367" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/main_screen_img_bg.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/menu_btm_selected_check.xml" value="0.367" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/mypage_login_btn.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/drawable/vectordrawable.xml" value="0.367" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_main_screen.xml" value="0.36614583333333334" />
@@ -23,10 +25,12 @@
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/activity_splash.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/fragment_discount_res.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/fragment_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/fragment_mypage.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/fragment_plus.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/main_ad_viewpager_item.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/main_frag_recyclerview_first.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/main_frag_recyclerview_first_item.xml" value="0.25" />
+        <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/main_frag_res_review_item.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/layout/preview_viewpager_item.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/menu/btm_navi_item.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/HPNRT/NetWorkApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.367" />
